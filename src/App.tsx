@@ -1,26 +1,65 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Link,
+  Outlet,
+} from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Characters from "./pages/Characters";
+import Music from "./pages/Music";
+import Episodes from "./pages/Episodes";
+import { createContext, useState } from "react";
+import styled from 'styled-components'
 
-function App() {
+
+
+const Container = styled.div<{darkmode:boolean}>`
+  background-color: ${p => p.darkmode ? "#222222" : "#fefefe"};
+`
+
+const App = () => {
+  const [darkmode,setDarkmode] = useState<boolean>(false);
+  const Layout = () => {
+    return (
+      <>
+        <Navbar setDarkmode={(darkmode: boolean) => setDarkmode(darkmode)} darkmode={darkmode}/>
+        <Outlet />
+        <Footer darkmode={darkmode}/>
+      </>
+    )
+  }
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children:[
+        {
+          path: "/",
+          element: <Home darkmode={darkmode}/>
+        },
+        {
+          path: "/characters",
+          element: <Characters darkmode={darkmode}/>
+        },
+        {
+          path: "/music",
+          element: <Music />
+        },
+        {
+          path: "/episodes",
+          element: <Episodes />
+        }
+      ]
+    }
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container darkmode={darkmode}>
+      <RouterProvider router={router} />
+    </Container>
   );
 }
 
-export default App;
+export default App
