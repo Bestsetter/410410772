@@ -1,5 +1,6 @@
 import {
   createBrowserRouter,
+  createHashRouter,
   RouterProvider,
   Route,
   Link,
@@ -17,7 +18,7 @@ import styled from 'styled-components'
 
 
 const Container = styled.div<{darkmode:boolean}>`
-  background-color: ${p => p.darkmode ? "#222222" : "#fefefe"};
+  background-color: ${p => p.darkmode ? "#222222" : "#dddddd"};
 `
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
       </>
     )
   }
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <Layout />,
@@ -46,7 +47,7 @@ const App = () => {
         },
         {
           path: "/music",
-          element: <Music />
+          element: <Music darkmode={darkmode}/>
         },
         {
           path: "/episodes",

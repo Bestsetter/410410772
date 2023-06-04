@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 const Container = styled(motion.div)<{darkmode:boolean}>`
   width: 100%;
   height: 100vh;
+  color: ${p => p.darkmode ? "#FFFFFF" : "#222222" };
   /* background-color: ${p => p.darkmode ? "black" : "#FFFFFF"} ; */
 `
 
@@ -18,7 +19,7 @@ const Home = ({darkmode}:{darkmode:boolean}) => {
       transition={{ duration: 1, ease:'easeOut' }}
     >
       Home
-      <Top />
+      <Top darkmode={darkmode} />
     </Container>
   )
 }

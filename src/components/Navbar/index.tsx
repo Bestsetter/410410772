@@ -3,13 +3,16 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { MdDarkMode,MdLightMode } from 'react-icons/md';
 
-const Container = styled.div`
+const Container = styled.div<{darkmode:boolean}>`
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin-bottom: 100px;
+  padding-top: 20px;
+  align-items: center;
   img{
-    width: 60px;
+    height: 60px;
+    filter: ${p => p.darkmode ? "invert(60%)" : ""};
   }
 `
 
@@ -65,8 +68,8 @@ const Navbar = ({ darkmode,setDarkmode }: { darkmode:boolean,setDarkmode: (darkm
     setDarkmode(!darkmode)
   }
   return (
-    <Container>
-      <img src="https://www.doveflyunitedsupplier.com/wp-content/uploads/2019/10/LOGO%E6%9C%AA%E5%8E%BB%E8%83%8C.jpg" alt="" />
+    <Container darkmode={darkmode}>
+      <img src="https://spy-family.net/assets/img/common/header_logo.png" alt="" />
       <Menu>
         <Links to="/">Home</Links>
         <Links to="/characters">Characters</Links>

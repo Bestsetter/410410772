@@ -130,7 +130,7 @@ const Characters = ({darkmode}:{darkmode:boolean}) => {
               </Card>
           )
       })}
-      <Top />
+      <Top darkmode={darkmode} />
     </Container>
   )
 }

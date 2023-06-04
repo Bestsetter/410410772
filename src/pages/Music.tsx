@@ -10,7 +10,7 @@ const Container = styled(motion.div)`
 `
 
 const Card = styled.div`
-  
+  margin: 20px 0;
 `
 
 const MusicData = [
@@ -71,7 +71,7 @@ interface data{
   link:string;
 }
 
-const Music = () => {
+const Music = ({darkmode}:{darkmode:boolean}) => {
   // const Musics = Music.map(()=>
   // );
   return (
@@ -85,11 +85,11 @@ const Music = () => {
                 <Card key={data.id} >
                     <div>{data.title}</div>
                     <div>{data.name}</div>
-                    <iframe width="600" height="336" src={data.link} frameBorder="0" allow='autoplay;' allowFullScreen></iframe>
+                    <iframe width="600" height="336" src={data.link} frameBorder="0" allow='autoplay;' allowFullScreen={false}></iframe>
                 </Card>
             )
         })}
-      <Top />
+      <Top darkmode={darkmode} />
     </Container>
   )
 }

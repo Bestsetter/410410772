@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const Button = styled.button<{visible:boolean}>`
+const Button = styled.button<{visible:boolean,darkmode:boolean}>`
     position: fixed;
     right: 40px;
     bottom: 100px;
-    background-color: lightblue;
+    background-color: ${p => p.darkmode ? 'gray' : 'lightblue'};
     border-radius: 50%;
     height: 50px;
     width: 50px;
@@ -14,7 +14,7 @@ const Button = styled.button<{visible:boolean}>`
     display: ${p => p.visible ? 'inline' : 'none'};
 `
 
-const Top = () => {
+const Top = ({darkmode}:{darkmode:boolean}) => {
   const [visible, setVisible] = useState<boolean>(false)
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
@@ -32,7 +32,7 @@ const Top = () => {
 
   window.addEventListener('scroll', toggleVisible);
   return (
-    <Button visible={visible} onClick={scrollToTop}>Top</Button>
+    <Button visible={visible} darkmode={darkmode} onClick={scrollToTop}>Top</Button>
   )
 }
 
