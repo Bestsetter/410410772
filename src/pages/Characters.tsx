@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Top from '../components/Top'
 import { motion } from 'framer-motion'
 
 const Container = styled(motion.div)<{darkmode:boolean}>`
@@ -38,6 +37,24 @@ const Card = styled.div<{darkmode:boolean,open:boolean}>`
   }
   :nth-child(odd){
     flex-direction: row-reverse;
+  }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    :nth-child(odd){
+      flex-direction: column;
+    }
+    img{
+      width: ${p => p.open ? "400px" : "200px"};
+      box-shadow: ${p => p.open ? "" : "12px 12px 7px #222222;"};
+      transition:0.5s;
+      &:hover{
+        /* width: ${p => p.open ? "" : "244px"};
+        box-shadow: ${p => p.open ? "" : "8px 8px 7px #222222;"};
+        cursor: pointer; */
+      }
+    }
   }
 `
 
@@ -130,7 +147,6 @@ const Characters = ({darkmode}:{darkmode:boolean}) => {
               </Card>
           )
       })}
-      <Top darkmode={darkmode} />
     </Container>
   )
 }

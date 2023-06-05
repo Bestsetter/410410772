@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const Button = styled.button<{visible:boolean,darkmode:boolean}>`
     position: fixed;
-    right: 40px;
-    bottom: 100px;
+    right: 50px;
+    bottom: 140px;
     background-color: ${p => p.darkmode ? 'gray' : 'lightblue'};
     border-radius: 50%;
     height: 50px;

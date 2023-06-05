@@ -14,6 +14,7 @@ import Music from "./pages/Music";
 import Episodes from "./pages/Episodes";
 import { createContext, useState } from "react";
 import styled from 'styled-components'
+import Top from "./components/Top";
 
 
 
@@ -28,6 +29,7 @@ const App = () => {
       <>
         <Navbar setDarkmode={(darkmode: boolean) => setDarkmode(darkmode)} darkmode={darkmode}/>
         <Outlet />
+        <Top darkmode={darkmode} />
         <Footer darkmode={darkmode}/>
       </>
     )
@@ -51,7 +53,7 @@ const App = () => {
         },
         {
           path: "/episodes",
-          element: <Episodes />
+          element: <Episodes darkmode={darkmode}/>
         }
       ]
     }

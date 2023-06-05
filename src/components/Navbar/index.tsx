@@ -30,7 +30,7 @@ const Links = styled(Link)`
     content: '';
     border-bottom: 2px solid lightblue;  
     transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
+    transition: transform 0.5s ease-in-out;
   }
   &:hover::after{
     transform: scaleX(1);
