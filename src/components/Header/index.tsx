@@ -1,7 +1,7 @@
-import React,{useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { MdDarkMode,MdLightMode } from 'react-icons/md';
+import { MdDarkMode,MdLightMode } from 'react-icons/md'
 
 const Container = styled.div<{darkmode:boolean}>`
   width: 100%;
@@ -35,19 +35,6 @@ const Links = styled(Link)`
   &:hover::after{
     transform: scaleX(1);
   }
-  /* &:nth-last-child(2){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lightblue;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-  &:nth-last-child(2):hover{
-    background-color: #ffffff;
-    border: 1px solid lightblue;
-  } */
 `
 
 const Button = styled.button<{darkmode:boolean}>`
@@ -63,7 +50,7 @@ const Button = styled.button<{darkmode:boolean}>`
   }
 `
 
-const Navbar = ({ darkmode,setDarkmode }: { darkmode:boolean,setDarkmode: (darkmode: boolean) => void}) => {
+const Header = ({ darkmode,setDarkmode }: { darkmode:boolean,setDarkmode: (darkmode: boolean) => void}) => {
   const switchmode = () =>{
     setDarkmode(!darkmode)
   }
@@ -83,4 +70,4 @@ const Navbar = ({ darkmode,setDarkmode }: { darkmode:boolean,setDarkmode: (darkm
   )
 }
 
-export default Navbar
+export default Header

@@ -18,12 +18,7 @@ const Top = ({darkmode}:{darkmode:boolean}) => {
   const [visible, setVisible] = useState<boolean>(false)
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 300){
-      setVisible(true)
-    } 
-    else if (scrolled <= 300){
-      setVisible(false)
-    }
+    scrolled>300?setVisible(true):setVisible(false)
   };
 
   const scrollToTop = () =>{

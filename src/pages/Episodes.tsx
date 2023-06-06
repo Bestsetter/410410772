@@ -2,11 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-const Container = styled(motion.div)<{darkmode:boolean}>`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: ${p => p.darkmode ? "#222222" : "#FFFFFF"}; */
 `
 
 const Card = styled.div<{darkmode:boolean}>`
@@ -220,8 +219,7 @@ const Episodes = ({darkmode}:{darkmode:boolean}) => {
     }
   };
   return (
-    <Container 
-      darkmode={darkmode}
+    <Container
       initial={{ opacity:0 }}
       animate={{ opacity:1 }}
       transition={{ duration: 1, ease:'easeOut' }}

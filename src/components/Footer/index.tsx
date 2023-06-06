@@ -31,9 +31,9 @@ const Footer = ({darkmode}:{darkmode:boolean}) => {
     <Container darkmode={darkmode}>
       <img src="https://spy-family.net/assets/img/common/header_logo.png" alt="" />
       <Menu darkmode={darkmode}>
-        <a href="https://twitter.com/share?url=https://spy-family.net/&text=アニメ『SPY×FAMILY』&hashtags=" target='_blank'><BsTwitter /></a>
-        <a href="https://www.facebook.com/share.php?u=https://spy-family.net/" target='_blank'><BsFacebook /></a>
-        <a href="https://line.me/R/msg/text/?アニメ『SPY×FAMILY』 https://spy-family.net/" target='_blank'><BsLine /></a>
+        <a href="https://twitter.com/share?url=https://spy-family.net/&text=アニメ『SPY×FAMILY』&hashtags=" target='_blank' rel="noreferrer"><BsTwitter /></a>
+        <a href="https://www.facebook.com/share.php?u=https://spy-family.net/" target='_blank' rel="noreferrer" ><BsFacebook /></a>
+        <a href="https://line.me/R/msg/text/?アニメ『SPY×FAMILY』 https://spy-family.net/" target='_blank' rel="noreferrer"><BsLine /></a>
       </Menu>
     </Container>
   )

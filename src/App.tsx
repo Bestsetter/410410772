@@ -1,20 +1,18 @@
 import {
-  createBrowserRouter,
+  // createBrowserRouter,
   createHashRouter,
   RouterProvider,
-  Route,
-  Link,
   Outlet,
-} from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Characters from "./pages/Characters";
-import Music from "./pages/Music";
-import Episodes from "./pages/Episodes";
-import { createContext, useState } from "react";
+} from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Characters from './pages/Characters'
+import Music from './pages/Music'
+import Episodes from './pages/Episodes'
+import { useState } from 'react'
 import styled from 'styled-components'
-import Top from "./components/Top";
+import Top from './components/Top'
 
 
 
@@ -27,7 +25,7 @@ const App = () => {
   const Layout = () => {
     return (
       <>
-        <Navbar setDarkmode={(darkmode: boolean) => setDarkmode(darkmode)} darkmode={darkmode}/>
+        <Header setDarkmode={(darkmode: boolean) => setDarkmode(darkmode)} darkmode={darkmode}/>
         <Outlet />
         <Top darkmode={darkmode} />
         <Footer darkmode={darkmode}/>
