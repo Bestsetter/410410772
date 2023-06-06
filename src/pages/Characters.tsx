@@ -114,22 +114,22 @@ const Characters = ({darkmode}:{darkmode:boolean}) => {
       transition={{ duration: 1, ease:'easeOut' }}
     >
       {CharacterData.map((data:data)=>{
-          return(
-              <Card key={data.id} darkmode={darkmode} open={openkey === data.id}>
-                  <img src={`https://spy-family.net/assets/img/bddvd/jk_vol${data.id}.jpg`} alt="" 
-                    onClick={() => handleClick(data.id)} draggable="false"/>
-                  <div style={{padding:'20px 0'}}>
-                      <div style={{display:'flex',alignItems:'end',fontSize:'24px',gap:'4px'}}>
-                          {data.name}
-                          <div style={{fontSize:'16px',color:'gray'}}>{data.nickname}</div>
-                      </div>
-                      <div className='phrase'>"{data.phrase}"</div>
-                      <div className='content'>
-                        {data.content}
-                      </div>
-                  </div>
-              </Card>
-          )
+        return(
+          <Card key={data.id} darkmode={darkmode} open={openkey === data.id}>
+            <img src={`https://spy-family.net/assets/img/bddvd/jk_vol${data.id}.jpg`} alt="" 
+              onClick={() => handleClick(data.id)} draggable="false"/>
+            <div style={{padding:'20px 0'}}>
+                <div style={{display:'flex',alignItems:'end',fontSize:'24px',gap:'4px'}}>
+                    {data.name}
+                    <div style={{fontSize:'16px',color:'gray'}}>{data.nickname}</div>
+                </div>
+                <div className='phrase'>"{data.phrase}"</div>
+                <div className='content'>
+                  {data.content}
+                </div>
+            </div>
+          </Card>
+        )
       })}
     </Container>
   )

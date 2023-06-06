@@ -7,7 +7,6 @@ const Container = styled(motion.div)<{darkmode:boolean}>`
   flex-direction: column;
   align-items: center;
   color: ${p => p.darkmode ? "#FFFFFF" : "#222222" };
-  /* background-color: ${p => p.darkmode ? "black" : "#FFFFFF"} ; */
 `
 
 const Box = styled.div`
